@@ -3,18 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Colorrs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'MyApp1.dart';
-import 'Info1.dart';
+import 'Your_info.dart';
+import 'Info.dart';
 
-class InfoPage extends StatefulWidget {
+class Doctor_Info extends StatefulWidget {
   int? index;
-  InfoPage(this.index);
+  Doctor_Info(this.index);
 
   @override
-  _InfoPageState createState() => _InfoPageState();
+  _Doctor_InfoState createState() => _Doctor_InfoState();
 }
 
-class _InfoPageState extends State<InfoPage> {
+class _Doctor_InfoState extends State<Doctor_Info> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -28,7 +28,7 @@ class _InfoPageState extends State<InfoPage> {
               List<String> path = settings1.name.toString().split("/");
               if (path[1] == "Page2") {
                 return MaterialPageRoute(
-                    builder: (context) => HomePage1(int.parse(path[2])));
+                    builder: (context) => Your_info(int.parse(path[2])));
               }
             },
             home: Scaffold(
@@ -100,39 +100,44 @@ class _InfoPageState extends State<InfoPage> {
                         child: Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(top: 80),
+                              padding: EdgeInsets.only(top: 80.h),
                               child: Container(
                                 width: 239.13.w,
                                 height: 191.3.h,
                                 child: Column(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(top: 5),
-                                      child: Container(
-                                        width: 110.w,
-                                        height: 110.h,
-                                        decoration: BoxDecoration(
-                                            color: Ranglar.value
-                                                ? Colors.black
-                                                : Color.fromRGBO(
-                                                    216, 216, 216, 1),
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                color: Color.fromRGBO(
-                                                    255, 255, 255, 0.56)),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                  offset: Offset(0.w, 15.h),
-                                                  blurRadius: 30.r,
-                                                  color: Ranglar.value
-                                                      ? Colors.white
-                                                      : Color.fromRGBO(
-                                                          230, 217, 217, 0.7)),
-                                            ],
-                                            image: DecorationImage(
-                                                image: AssetImage(Info
-                                                    .assets1[widget.index!]))),
+                                      padding: EdgeInsets.only(top: 5.h),
+                                      child: CircleAvatar(
+                                        radius: 55.r,
+                                        backgroundImage: AssetImage(
+                                            Info.assets1[widget.index!]),
                                       ),
+                                      // child: Container(
+                                      //   width: 110.w,
+                                      //   height: 110.h,
+                                      //   decoration: BoxDecoration(
+                                      //       color: Ranglar.value
+                                      //           ? Colors.black
+                                      //           : Color.fromRGBO(
+                                      //               216, 216, 216, 1),
+                                      //       shape: BoxShape.circle,
+                                      //       border: Border.all(
+                                      //           color: Color.fromRGBO(
+                                      //               255, 255, 255, 0.56)),
+                                      //       boxShadow: [
+                                      //         BoxShadow(
+                                      //             offset: Offset(0.w, 15.h),
+                                      //             blurRadius: 30.r,
+                                      //             color: Ranglar.value
+                                      //                 ? Colors.white
+                                      //                 : Color.fromRGBO(
+                                      //                     230, 217, 217, 0.7)),
+                                      //       ],
+                                      //       image: DecorationImage(
+                                      //           image: AssetImage(Info
+                                      //               .assets1[widget.index!]))),
+                                      // ),
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(top: 47.h),
@@ -169,7 +174,8 @@ class _InfoPageState extends State<InfoPage> {
                             ),
                             Container(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Container(
                                     width: 110.w,
@@ -210,7 +216,8 @@ class _InfoPageState extends State<InfoPage> {
                                           child: Column(
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.only(top: 32.h),
+                                                padding:
+                                                    EdgeInsets.only(top: 32.h),
                                                 child: Image.asset(
                                                   "assets/Men Icon.png",
                                                 ),
@@ -285,7 +292,8 @@ class _InfoPageState extends State<InfoPage> {
                                           child: Column(
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.only(top: 32.h),
+                                                padding:
+                                                    EdgeInsets.only(top: 32.h),
                                                 child: Image.asset(
                                                   "assets/Medal.png",
                                                 ),
@@ -358,7 +366,8 @@ class _InfoPageState extends State<InfoPage> {
                                           child: Column(
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.only(top: 32.h),
+                                                padding:
+                                                    EdgeInsets.only(top: 32.h),
                                                 child: Image.asset(
                                                   "assets/Star.png",
                                                 ),
@@ -657,7 +666,7 @@ class _InfoPageState extends State<InfoPage> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        HomePage1(widget.index)));
+                                        Your_info(widget.index)));
                           });
                         },
                         child: Center(

@@ -1,19 +1,17 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'Colorrs.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Info1.dart';
-import 'Last Page.dart';
+import 'Info.dart';
+import 'Messages.dart';
 
-class HomePage1 extends StatefulWidget {
+class Your_info extends StatefulWidget {
   int? index;
-  HomePage1(this.index);
+  Your_info(this.index);
   @override
-  _HomePage1State createState() => _HomePage1State();
+  _Your_infoState createState() => _Your_infoState();
 }
 
-class _HomePage1State extends State<HomePage1> {
+class _Your_infoState extends State<Your_info> {
   String _name = "26-30";
   bool _e = false;
   List<bool> _isLike4 = List.generate(Info.name4.length, (index) => false);
@@ -36,65 +34,84 @@ class _HomePage1State extends State<HomePage1> {
       splitScreenMode: true,
       builder: (context , child) {
         return Scaffold(
-      backgroundColor: Ranglar.value ? Colors.black : const Color.fromRGBO(255, 255, 255, 1),
+      backgroundColor:
+          Ranglar.value ? Colors.black : const Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Ranglar.value ? Colors.black :const Color.fromRGBO(255, 255, 255, 1),
+        backgroundColor: Ranglar.value
+            ? Colors.black
+            : const Color.fromRGBO(255, 255, 255, 1),
         leading: GestureDetector(
-          onTap: (){
+          onTap: () {
             setState(() {
               Navigator.pop(context);
             });
           },
           child: Container(
-            width: 40.w,
-            height: 40.h,
-            decoration: BoxDecoration(
-              color: Ranglar.value ? Colors.black : const Color.fromRGBO(255, 255, 255, 1),
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-            child:Icon(
-              Icons.arrow_back,
-              color: 
-              Ranglar.value ? Colors.white : const Color.fromRGBO(34,43,69,1),size:16.sp)
-          ),
+              width: 40.w,
+              height: 40.h,
+              decoration: BoxDecoration(
+                color: Ranglar.value
+                    ? Colors.black
+                    : const Color.fromRGBO(255, 255, 255, 1),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Icon(Icons.arrow_back,
+                  color: Ranglar.value
+                      ? Colors.white
+                      : const Color.fromRGBO(34, 43, 69, 1),
+                  size: 16.sp)),
         ),
         title: Text(
           "Записаться",
-          style: TextStyle(color: Ranglar.value ? Colors.white : const Color.fromRGBO(34, 43, 69, 1), fontSize: 18.sp),
+          style: TextStyle(
+              color: Ranglar.value
+                  ? Colors.white
+                  : const Color.fromRGBO(34, 43, 69, 1),
+              fontSize: 18.sp),
         ),
       ),
       body: SingleChildScrollView(
-        reverse: true,
-        primary: true,
         child: Padding(
-          padding: EdgeInsets.only(left: 27.w),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              Container(
                   width: 144.w,
                   height: 21.h,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Декабрь, 2021",
-                        style: TextStyle(
-                            color: Ranglar.value ? Colors.white : const Color.fromRGBO(34, 43, 69, 1),
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      SizedBox(
-                        width: 14.w,
-                        height: 7.h,),
-                        Icon(
-                          Icons.arrow_drop_down,
-                          color: Ranglar.value ? Colors.white : const Color.fromRGBO(34, 43, 69, 1),
+                      Container(
+                        width: 95.w,
+                        height: 30.h,
+                        child: Text(
+                          "Декабрь, 2021",
+                          style: TextStyle(
+                              color: Ranglar.value
+                                  ? Colors.white
+                                  : const Color.fromRGBO(34, 43, 69, 1),
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w700),
                         ),
+                      ),
+                      Container(
+                        width: 20.w,
+                        height: 30.h,
+                        child: Center(
+                          child: Icon(
+                            Icons.arrow_drop_down,
+                            size: 22.sp,
+                            color: Ranglar.value
+                                ? Colors.white
+                                : const Color.fromRGBO(34, 43, 69, 1),
+                          ),
+                        ),
+                      ),
                     ],
                   )),
               SizedBox(
@@ -127,8 +144,12 @@ class _HomePage1State extends State<HomePage1> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(13.r),
                               color: _isLike[index]
-                                  ? Ranglar.value ? const Color.fromRGBO(8, 38, 155, 1) : const Color.fromRGBO(62, 100, 255, 1)
-                                  : Ranglar.value ? Colors.white: const Color.fromRGBO(255, 255, 255, 1),
+                                  ? Ranglar.value
+                                      ? const Color.fromRGBO(8, 38, 155, 1)
+                                      : const Color.fromRGBO(62, 100, 255, 1)
+                                  : Ranglar.value
+                                      ? Colors.white
+                                      : const Color.fromRGBO(255, 255, 255, 1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -137,8 +158,14 @@ class _HomePage1State extends State<HomePage1> {
                                   Info.name3[index],
                                   style: TextStyle(
                                       color: _isLike[index]
-                                          ? Ranglar.value ? Colors.black : const Color.fromRGBO(255, 255, 255, 1)
-                                          : Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1),
+                                          ? Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  255, 255, 255, 1)
+                                          : Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  107, 119, 154, 1),
                                       fontSize: 24.sp,
                                       fontWeight: _isLike[index]
                                           ? FontWeight.w700
@@ -148,9 +175,15 @@ class _HomePage1State extends State<HomePage1> {
                                   Info.info1[index],
                                   style: TextStyle(
                                     color: _isLike[index]
-                                          ? Ranglar.value ? Colors.black : const Color.fromRGBO(255, 255, 255, 1)
-                                          : Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1),
-                                      fontSize: 12.sp,
+                                        ? Ranglar.value
+                                            ? Colors.black
+                                            : const Color.fromRGBO(
+                                                255, 255, 255, 1)
+                                        : Ranglar.value
+                                            ? Colors.black
+                                            : const Color.fromRGBO(
+                                                107, 119, 154, 1),
+                                    fontSize: 12.sp,
                                   ),
                                 ),
                               ],
@@ -167,9 +200,11 @@ class _HomePage1State extends State<HomePage1> {
                 width: 145.w,
                 height: 21.h,
                 child: Text(
-                  "Доступные чсы",
+                  "Доступные часы",
                   style: TextStyle(
-                      color: Ranglar.value ? Colors.white : const Color.fromRGBO(34, 43, 69, 1),
+                      color: Ranglar.value
+                          ? Colors.white
+                          : const Color.fromRGBO(34, 43, 69, 1),
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w700),
                 ),
@@ -208,8 +243,12 @@ class _HomePage1State extends State<HomePage1> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.r),
                               color: _isLike1[index]
-                                  ? Ranglar.value ? const Color.fromRGBO(2, 52, 252, 1) : const Color.fromRGBO(62, 100, 255, 1)
-                                  : Ranglar.value ? Colors.white : const Color.fromRGBO(255, 255, 255, 1),
+                                  ? Ranglar.value
+                                      ? const Color.fromRGBO(2, 52, 252, 1)
+                                      : const Color.fromRGBO(62, 100, 255, 1)
+                                  : Ranglar.value
+                                      ? Colors.white
+                                      : const Color.fromRGBO(255, 255, 255, 1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -218,8 +257,14 @@ class _HomePage1State extends State<HomePage1> {
                                   Info.time[index],
                                   style: TextStyle(
                                       color: _isLike1[index]
-                                          ? Ranglar.value ? Colors.black : const Color.fromRGBO(255, 255, 255, 1)
-                                          : Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1),
+                                          ? Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  255, 255, 255, 1)
+                                          : Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  107, 119, 154, 1),
                                       fontSize: 14.sp,
                                       fontWeight: _isLike1[index]
                                           ? FontWeight.w700
@@ -265,9 +310,13 @@ class _HomePage1State extends State<HomePage1> {
                             height: 40.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.r),
-                              color: _isLike2[index]  
-                                  ? Ranglar.value ? const Color.fromRGBO(2, 52, 252, 1) : const Color.fromRGBO(62, 100, 255, 1)
-                                  : Ranglar.value ? Colors.white : const Color.fromRGBO(255, 255, 255, 1),
+                              color: _isLike2[index]
+                                  ? Ranglar.value
+                                      ? const Color.fromRGBO(2, 52, 252, 1)
+                                      : const Color.fromRGBO(62, 100, 255, 1)
+                                  : Ranglar.value
+                                      ? Colors.white
+                                      : const Color.fromRGBO(255, 255, 255, 1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -276,8 +325,14 @@ class _HomePage1State extends State<HomePage1> {
                                   Info.time1[index],
                                   style: TextStyle(
                                       color: _isLike2[index]
-                                          ? Ranglar.value ? Colors.black : const Color.fromRGBO(255, 255, 255, 1)
-                                          : Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1),
+                                          ? Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  255, 255, 255, 1)
+                                          : Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  107, 119, 154, 1),
                                       fontSize: 14.sp,
                                       fontWeight: _isLike2[index]
                                           ? FontWeight.w700
@@ -290,7 +345,7 @@ class _HomePage1State extends State<HomePage1> {
                       );
                     }),
               ),
-             SizedBox(
+              SizedBox(
                 height: 10.h,
               ),
               SizedBox(
@@ -317,15 +372,19 @@ class _HomePage1State extends State<HomePage1> {
                           });
                         },
                         child: Padding(
-                          padding:  EdgeInsets.only(right: 10.w),
+                          padding: EdgeInsets.only(right: 10.w),
                           child: Container(
                             width: 100.w,
                             height: 40.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.r),
-                              color: _isLike3[index]  
-                                  ? Ranglar.value ? const Color.fromRGBO(2, 52, 252, 1) : const Color.fromRGBO(62, 100, 255, 1)
-                                  : Ranglar.value ? Colors.white : const Color.fromRGBO(255, 255, 255, 1),
+                              color: _isLike3[index]
+                                  ? Ranglar.value
+                                      ? const Color.fromRGBO(2, 52, 252, 1)
+                                      : const Color.fromRGBO(62, 100, 255, 1)
+                                  : Ranglar.value
+                                      ? Colors.white
+                                      : const Color.fromRGBO(255, 255, 255, 1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -334,8 +393,14 @@ class _HomePage1State extends State<HomePage1> {
                                   Info.time2[index],
                                   style: TextStyle(
                                       color: _isLike3[index]
-                                          ? Ranglar.value ? Colors.white : const Color.fromRGBO(255, 255, 255, 1)
-                                          : Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1),
+                                          ? Ranglar.value
+                                              ? Colors.white
+                                              : const Color.fromRGBO(
+                                                  255, 255, 255, 1)
+                                          : Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  107, 119, 154, 1),
                                       fontSize: 14.sp,
                                       fontWeight: _isLike3[index]
                                           ? FontWeight.w700
@@ -357,7 +422,9 @@ class _HomePage1State extends State<HomePage1> {
                 child: Text(
                   "Информация о пациенте",
                   style: TextStyle(
-                      color: Ranglar.value ? Colors.white : const Color.fromRGBO(34, 43, 69, 1),
+                      color: Ranglar.value
+                          ? Colors.white
+                          : const Color.fromRGBO(34, 43, 69, 1),
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w700),
                 ),
@@ -371,34 +438,46 @@ class _HomePage1State extends State<HomePage1> {
                 child: Text(
                   "ФИО",
                   style: TextStyle(
-                    color: Ranglar.value ? Colors.white : const Color.fromRGBO(107, 119, 154, 1)
-                    ),
+                      color: Ranglar.value
+                          ? Colors.white
+                          : const Color.fromRGBO(107, 119, 154, 1)),
                 ),
               ),
               SizedBox(height: 9.h),
               Container(
-                width: 360.w,
+                width: 328.w,
                 height: 50.h,
-                color: Ranglar.value ? Colors.white : const Color.fromRGBO(107, 119, 154, 0.05),
+                color: Ranglar.value
+                    ? Colors.white
+                    : const Color.fromRGBO(107, 119, 154, 0.05),
                 child: TextFormField(
                   obscuringCharacter: "*",
                   decoration: InputDecoration(
                       hintText: "Иззат Рахматов",
                       hintStyle: TextStyle(
-                          color: Ranglar.value ? Colors.black : const Color.fromRGBO(34, 43, 69, 1), fontSize: 16.sp),
+                          color: Ranglar.value
+                              ? Colors.black
+                              : const Color.fromRGBO(34, 43, 69, 1),
+                          fontSize: 16.sp),
                       errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.r),
                           borderSide: BorderSide(
-                            color: Ranglar.value ? const Color.fromRGBO(255,255,255,0.05) : const Color.fromRGBO(107,119,154,0.05)
-                            )
-                            ),
+                              color: Ranglar.value
+                                  ? const Color.fromRGBO(255, 255, 255, 0.05)
+                                  : const Color.fromRGBO(107, 119, 154, 0.05))),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1)),
+                              color: Ranglar.value
+                                  ? Colors.black
+                                  : const Color.fromRGBO(107, 119, 154, 1)),
                           borderRadius: BorderRadius.circular(10.r)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.r),
-                          borderSide: BorderSide(color: Ranglar.value ? const Color.fromRGBO(255,255,255,0.05) : const Color.fromRGBO(107,119,154,0.05)))),
+                          borderSide: BorderSide(
+                              color: Ranglar.value
+                                  ? const Color.fromRGBO(255, 255, 255, 0.05)
+                                  : const Color.fromRGBO(
+                                      107, 119, 154, 0.05)))),
                   enabled: true,
                   autofocus: false,
                   maxLines: 1,
@@ -412,82 +491,103 @@ class _HomePage1State extends State<HomePage1> {
               SizedBox(
                 width: 54.w,
                 height: 16.h,
-                ),
-                Text(
+              ),
+              Container(
+                width: 40.w,
+                height: 16.h,
+                child: Text(
                   "Возраст",
                   style: TextStyle(
                     fontSize: 14.sp,
-                    color: Ranglar.value ? Colors.white : const Color.fromRGBO(107, 119, 154, 1),
+                    color: Ranglar.value
+                        ? Colors.white
+                        : const Color.fromRGBO(107, 119, 154, 1),
                   ),
                 ),
-                SizedBox(
+              ),
+              SizedBox(
                 height: 9.h,
               ),
               Container(
-                width: 360.w,
-                decoration:
-                    BoxDecoration(
-                      color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 0.05),
-                      borderRadius: BorderRadius.circular(10.r)),
+                width: 328.w,
+                decoration: BoxDecoration(
+                    color: Ranglar.value
+                        ? Colors.white
+                        : Color.fromRGBO(107, 119, 154, 0.05),
+                    borderRadius: BorderRadius.circular(10.r)),
                 child: ExpansionTile(
+                  tilePadding: EdgeInsets.only(right: 16.w),
                   childrenPadding: EdgeInsets.all(_e ? 20 : 0),
-                  onExpansionChanged: (e){
+                  onExpansionChanged: (e) {
                     setState(() {
-                    _e = e;
-                  });},
-                  trailing: Icon(_e ? Icons.arrow_drop_up : Icons.arrow_drop_down,
-                  size: 14.sp,
-                  color: Ranglar.value ? Colors.black : const Color.fromRGBO(107,119,154,1),
+                      _e = e;
+                    });
+                  },
+                  trailing: Icon(
+                    _e ? Icons.arrow_drop_up : Icons.arrow_drop_down,
+                    size: 14.sp,
+                    color: Ranglar.value
+                        ? Colors.black
+                        : const Color.fromRGBO(107, 119, 154, 1),
                   ),
-                title: Text(
-                  _name,
-                  style: TextStyle(
-                    fontSize: 16.sp,
-                    color: Ranglar.value ? Colors.black : const Color.fromRGBO(34,43,69,1)),),
-                    children: [
-                      Column(
-                        children: [
-                          Container(
-                            width: double.infinity,
-                            height: _e ? 520.h : 0.h,
-                            child: ListView.builder(
+                  title: Text(
+                    _name,
+                    style: TextStyle(
+                        fontSize: 16.sp,
+                        color: Ranglar.value
+                            ? Colors.black
+                            : const Color.fromRGBO(34, 43, 69, 1)),
+                  ),
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: _e ? 520.h : 0.h,
+                          child: ListView.builder(
                               itemCount: Info.year.length,
-                              itemBuilder: (context, index){
+                              itemBuilder: (context, index) {
                                 return InkWell(
-                                  onTap: (){
+                                  onTap: () {
                                     setState(() {
                                       _name = Info.year[index];
                                       _e = !_e;
                                     });
                                   },
                                   child: Container(
-                                                              width: double.infinity,
-                                                              height: 20.h,
-                                                              child: Text(
-                                  Info.year[index],
-                                  style: TextStyle(
-                                    fontSize: 16.sp,
-                                    color: Ranglar.value ? Colors.black : Color.fromRGBO(34,43,69,1)),),
-                                                            ),
+                                    width: double.infinity,
+                                    height: 20.h,
+                                    child: Text(
+                                      Info.year[index],
+                                      style: TextStyle(
+                                          fontSize: 16.sp,
+                                          color: Ranglar.value
+                                              ? Colors.black
+                                              : Color.fromRGBO(34, 43, 69, 1)),
+                                    ),
+                                  ),
                                 );
-                              }
-                              ),
-                          ),
-                            SizedBox(height: 1.h,),
-                        ],
-                      ),
+                              }),
+                        ),
+                        SizedBox(
+                          height: 1.h,
+                        ),
                       ],
                     ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 20.h,
               ),
-                Text(
-                  "Пол",
-                  style: TextStyle(
-                      color: Ranglar.value ? Colors.white : const Color.fromRGBO(107, 119, 154, 1), 
-                      fontSize: 14.sp),
-                ),
+              Text(
+                "Пол",
+                style: TextStyle(
+                    color: Ranglar.value
+                        ? Colors.white
+                        : const Color.fromRGBO(107, 119, 154, 1),
+                    fontSize: 14.sp),
+              ),
               SizedBox(
                 height: 9.h,
               ),
@@ -511,16 +611,19 @@ class _HomePage1State extends State<HomePage1> {
                           });
                         },
                         child: Padding(
-                          padding: EdgeInsets.only(right: 10.w
-                          ),
+                          padding: EdgeInsets.only(right: 10.w),
                           child: Container(
                             width: 100.w,
                             height: 40.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.r),
-                              color: _isLike4[index]  
-                                  ? Ranglar.value ? const Color.fromRGBO(2, 52, 252, 1) : const Color.fromRGBO(62, 100, 255, 1)
-                                  : Ranglar.value ? Colors.white : const Color.fromRGBO(255, 255, 255, 1),
+                              color: _isLike4[index]
+                                  ? Ranglar.value
+                                      ? const Color.fromRGBO(2, 52, 252, 1)
+                                      : const Color.fromRGBO(62, 100, 255, 1)
+                                  : Ranglar.value
+                                      ? Colors.white
+                                      : const Color.fromRGBO(255, 255, 255, 1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -529,8 +632,14 @@ class _HomePage1State extends State<HomePage1> {
                                   Info.name4[index],
                                   style: TextStyle(
                                       color: _isLike4[index]
-                                          ? Ranglar.value ? Colors.black :const Color.fromRGBO(255, 255, 255, 1)
-                                          : Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1),
+                                          ? Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  255, 255, 255, 1)
+                                          : Ranglar.value
+                                              ? Colors.black
+                                              : const Color.fromRGBO(
+                                                  107, 119, 154, 1),
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w400),
                                 ),
@@ -548,33 +657,48 @@ class _HomePage1State extends State<HomePage1> {
                 child: Text(
                   "Напишите о проблеме",
                   style: TextStyle(
-                      fontSize: 14.sp, color: Ranglar.value ? Colors.white : const Color.fromRGBO(107, 119, 154, 1)),
+                      fontSize: 14.sp,
+                      color: Ranglar.value
+                          ? Colors.white
+                          : const Color.fromRGBO(107, 119, 154, 1)),
                 ),
               ),
               SizedBox(height: 9.h),
               Container(
-                width: 360.w,
+                width: 328.w,
                 height: 129.h,
                 decoration: BoxDecoration(
-                    color: Ranglar.value ? const Color.fromRGBO(255,255,255,1):const Color.fromRGBO(107, 119, 154, 0.05),
+                    color: Ranglar.value
+                        ? const Color.fromRGBO(255, 255, 255, 1)
+                        : const Color.fromRGBO(107, 119, 154, 0.05),
                     borderRadius: BorderRadius.circular(10.r)),
                 child: TextFormField(
                   obscuringCharacter: "*",
                   decoration: InputDecoration(
                       hintText: "Ваша проблема",
                       hintStyle: TextStyle(
-                          color: Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1),
+                          color: Ranglar.value
+                              ? Colors.black
+                              : const Color.fromRGBO(107, 119, 154, 1),
                           fontSize: 16.sp),
                       errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.r),
-                          borderSide: BorderSide(color: Ranglar.value ? Colors.redAccent: Colors.red)),
+                          borderSide: BorderSide(
+                              color: Ranglar.value
+                                  ? Colors.redAccent
+                                  : Colors.red)),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Ranglar.value ? Colors.black : const Color.fromRGBO(107, 119, 154, 1)),
+                              color: Ranglar.value
+                                  ? Colors.black
+                                  : const Color.fromRGBO(107, 119, 154, 1)),
                           borderRadius: BorderRadius.circular(10.r)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.r),
-                          borderSide: BorderSide(color: Ranglar.value ? Colors.greenAccent: Colors.green))),
+                          borderSide: BorderSide(
+                              color: Ranglar.value
+                                  ? Colors.greenAccent
+                                  : Colors.green))),
                   enabled: true,
                   autofocus: false,
                   maxLines: 5,
@@ -590,22 +714,27 @@ class _HomePage1State extends State<HomePage1> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>LastPage(widget.index)));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LastPage(widget.index)));
                   });
                 },
                 child: Container(
-                  width: 360.w,
+                  width: 328.w,
                   height: 60.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r),
-                      color: Ranglar.value ? const Color.fromRGBO(255, 255, 255, 1) : const Color.fromRGBO(62, 100, 255, 1)),
+                      color: Ranglar.value
+                          ? const Color.fromRGBO(255, 255, 255, 1)
+                          : const Color.fromRGBO(62, 100, 255, 1)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "Записаться",
                         style: TextStyle(
-                            color: Ranglar.value ? Colors.black : const Color.fromRGBO(255, 255, 255, 1),
+                            color: Ranglar.value
+                                ? Colors.black
+                                : const Color.fromRGBO(255, 255, 255, 1),
                             fontSize: 16.sp),
                       ),
                     ],
@@ -620,7 +749,7 @@ class _HomePage1State extends State<HomePage1> {
         ),
       ),
     );
-      }
+  }
     );
   }
 }

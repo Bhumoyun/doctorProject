@@ -1,9 +1,10 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'Info1.dart';
+import 'Info.dart';
 import 'Colorrs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+
 class LastPage extends StatefulWidget {
   int? index;
   LastPage(this.index);
@@ -15,26 +16,31 @@ class _LastPageState extends State<LastPage> {
   double _value = 3.5;
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context , child) {
-        return Scaffold(
+    return Scaffold(
       backgroundColor: Ranglar.value ? Colors.black : Colors.white,
       appBar: AppBar(
         title: Row(
-          children:[
-        CircleAvatar(
-          radius: 20.r,
-          backgroundColor: Ranglar.value ? Colors.black : Colors.grey,
-          backgroundImage: AssetImage(Info.assets1[widget.index!]),
-        ),
-        Text(
-          Info.name[widget.index!],
-          style:
-          TextStyle(fontSize: 16.sp, color: Ranglar.value ? Colors.white : Color.fromRGBO(34, 43, 69, 1)),
-        ),
+          children: [
+            CircleAvatar(
+              radius: 20.r,
+              backgroundColor: Ranglar.value ? Colors.black : Colors.grey,
+              backgroundImage: AssetImage(Info.assets1[widget.index!]),
+            ),
+            SizedBox(
+              width: 12.w,
+            ),
+            Container(
+              width: 100.w,
+              height: 20.h,
+              child: Text(
+                Info.name[widget.index!],
+                style: TextStyle(
+                    fontSize: 16.sp,
+                    color: Ranglar.value
+                        ? Colors.white
+                        : Color.fromRGBO(34, 43, 69, 1)),
+              ),
+            ),
           ],
         ),
         leading: GestureDetector(
@@ -47,40 +53,50 @@ class _LastPageState extends State<LastPage> {
             width: 40.w,
             height: 40.h,
             decoration: BoxDecoration(
-                color: Ranglar.value ? Colors.black : Color.fromRGBO(255, 255, 255, 1),
+                color: Ranglar.value
+                    ? Colors.black
+                    : Color.fromRGBO(255, 255, 255, 1),
                 borderRadius: BorderRadius.circular(10.r)),
             child: Icon(
               Icons.arrow_back,
-              color: Ranglar.value ? Colors.white: Color.fromRGBO(34, 43, 69, 1),
+              color:
+                  Ranglar.value ? Colors.white : Color.fromRGBO(34, 43, 69, 1),
               size: 16.sp,
             ),
           ),
         ),
         elevation: 0,
-        backgroundColor: Ranglar.value ? Colors.black : Color.fromRGBO(255, 255, 255, 1),
+        backgroundColor:
+            Ranglar.value ? Colors.black : Color.fromRGBO(255, 255, 255, 1),
         actions: [
           Container(
             width: 40.w,
             height: 40.h,
             decoration: BoxDecoration(
-              color: Ranglar.value ? Colors.black : Color.fromRGBO(255, 255, 255, 1),
+              color: Ranglar.value
+                  ? Colors.black
+                  : Color.fromRGBO(255, 255, 255, 1),
               borderRadius: BorderRadius.circular(10.r),
             ),
             child: Icon(
               Icons.phone_outlined,
-              color: Ranglar.value ? Colors.white : Color.fromRGBO(35, 32, 32, 1),
+              color:
+                  Ranglar.value ? Colors.white : Color.fromRGBO(35, 32, 32, 1),
             ),
           ),
           Container(
             width: 40.w,
             height: 40.h,
             decoration: BoxDecoration(
-              color: Ranglar.value ? Colors.black : Color.fromRGBO(255, 255, 255, 1),
+              color: Ranglar.value
+                  ? Colors.black
+                  : Color.fromRGBO(255, 255, 255, 1),
               borderRadius: BorderRadius.circular(10.r),
             ),
             child: Icon(
               Icons.videocam_outlined,
-              color: Ranglar.value ? Colors.white: Color.fromRGBO(35, 32, 32, 1),
+              color:
+                  Ranglar.value ? Colors.white : Color.fromRGBO(35, 32, 32, 1),
             ),
           ),
         ],
@@ -96,7 +112,9 @@ class _LastPageState extends State<LastPage> {
                   width: 257.w,
                   height: 90.h,
                   decoration: BoxDecoration(
-                    color: Ranglar.value ? Colors.white : Color.fromRGBO(62, 100, 255, 1),
+                    color: Ranglar.value
+                        ? Colors.white
+                        : Color.fromRGBO(62, 100, 255, 1),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15.r),
                         topRight: Radius.circular(15.r),
@@ -109,7 +127,9 @@ class _LastPageState extends State<LastPage> {
                       "Ассалому алайкум, хаво узгарганда бошим азгина огриб туради, нима килсам булади ?",
                       style: TextStyle(
                           fontSize: 14.sp,
-                          color: Ranglar.value ? Colors.black : Color.fromRGBO(255, 255, 255, 1)),
+                          color: Ranglar.value
+                              ? Colors.black
+                              : Color.fromRGBO(255, 255, 255, 1)),
                     ),
                   ),
                 ),
@@ -131,7 +151,9 @@ class _LastPageState extends State<LastPage> {
                     child: Text(
                       "10:13",
                       style: TextStyle(
-                          color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1),
+                          color: Ranglar.value
+                              ? Colors.white
+                              : Color.fromRGBO(107, 119, 154, 1),
                           fontSize: 12.sp),
                     ),
                   ),
@@ -141,7 +163,9 @@ class _LastPageState extends State<LastPage> {
                     height: 8.h,
                     child: Image.asset(
                       "assets/Tick.png",
-                      color: Ranglar.value ? Colors.white : Color.fromRGBO(62, 100, 255, 1),
+                      color: Ranglar.value
+                          ? Colors.white
+                          : Color.fromRGBO(62, 100, 255, 1),
                     ),
                   ),
                 ],
@@ -158,19 +182,24 @@ class _LastPageState extends State<LastPage> {
                   width: 229.w,
                   height: 90.h,
                   decoration: BoxDecoration(
-                    color: Ranglar.value ? Color.fromRGBO(107,119,154,1) : Color.fromRGBO(241, 244, 247, 1),
+                    color: Ranglar.value
+                        ? Color.fromRGBO(107, 119, 154, 1)
+                        : Color.fromRGBO(241, 244, 247, 1),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15.r),
                         topRight: Radius.circular(15.r),
                         bottomRight: Radius.circular(15.r)),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(right: 20.w, left: 15.w, top: 18.h),
+                    padding:
+                        EdgeInsets.only(right: 20.w, left: 15.w, top: 18.h),
                     child: Text(
                       "Добрый день, если голова болить когда будет дождь тогда у Вас скорее всего мигрень",
                       style: TextStyle(
                           fontSize: 14.sp,
-                          color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1)),
+                          color: Ranglar.value
+                              ? Colors.white
+                              : Color.fromRGBO(107, 119, 154, 1)),
                     ),
                   ),
                 ),
@@ -192,7 +221,9 @@ class _LastPageState extends State<LastPage> {
                     child: Text(
                       "10:14",
                       style: TextStyle(
-                          color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1),
+                          color: Ranglar.value
+                              ? Colors.white
+                              : Color.fromRGBO(107, 119, 154, 1),
                           fontSize: 12.sp),
                     ),
                   ),
@@ -210,7 +241,9 @@ class _LastPageState extends State<LastPage> {
                   width: 110.w,
                   height: 103.h,
                   decoration: BoxDecoration(
-                    color: Ranglar.value ? Colors.white : Color.fromRGBO(62, 100, 255, 1),
+                    color: Ranglar.value
+                        ? Colors.white
+                        : Color.fromRGBO(62, 100, 255, 1),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15.r),
                         topRight: Radius.circular(15.r),
@@ -223,7 +256,9 @@ class _LastPageState extends State<LastPage> {
                       "как то его можно лечить ?",
                       style: TextStyle(
                           fontSize: 14.sp,
-                          color: Ranglar.value ? Colors.black : Color.fromRGBO(255, 255, 255, 1)),
+                          color: Ranglar.value
+                              ? Colors.black
+                              : Color.fromRGBO(255, 255, 255, 1)),
                     ),
                   ),
                 ),
@@ -245,7 +280,9 @@ class _LastPageState extends State<LastPage> {
                     child: Text(
                       "10:14",
                       style: TextStyle(
-                          color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1),
+                          color: Ranglar.value
+                              ? Colors.white
+                              : Color.fromRGBO(107, 119, 154, 1),
                           fontSize: 12.sp),
                     ),
                   ),
@@ -255,7 +292,9 @@ class _LastPageState extends State<LastPage> {
                     height: 8.h,
                     child: Image.asset(
                       "assets/Tick.png",
-                      color: Ranglar.value ? Colors.white : Color.fromRGBO(62, 100, 255, 1),
+                      color: Ranglar.value
+                          ? Colors.white
+                          : Color.fromRGBO(62, 100, 255, 1),
                     ),
                   ),
                 ],
@@ -272,19 +311,24 @@ class _LastPageState extends State<LastPage> {
                   width: 205.w,
                   height: 90.h,
                   decoration: BoxDecoration(
-                    color: Ranglar.value ? Color.fromRGBO(107,119,154,1) : Color.fromRGBO(241, 244, 247, 1),
+                    color: Ranglar.value
+                        ? Color.fromRGBO(107, 119, 154, 1)
+                        : Color.fromRGBO(241, 244, 247, 1),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15.r),
                         topRight: Radius.circular(15.r),
                         bottomRight: Radius.circular(15.r)),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(right: 20.w, left: 15.w, top: 18.h),
+                    padding:
+                        EdgeInsets.only(right: 20.w, left: 15.w, top: 18.h),
                     child: Text(
                       "Да конечно, сейчас медицина ....... . ... . . . ",
                       style: TextStyle(
                           fontSize: 14.sp,
-                          color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1)),
+                          color: Ranglar.value
+                              ? Colors.white
+                              : Color.fromRGBO(107, 119, 154, 1)),
                     ),
                   ),
                 ),
@@ -296,7 +340,7 @@ class _LastPageState extends State<LastPage> {
             Container(
               margin: EdgeInsets.only(right: 27.w),
               width: double.infinity.sw,
-              height: 1.h,
+              height: 20.h,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -306,7 +350,9 @@ class _LastPageState extends State<LastPage> {
                     child: Text(
                       "10:15",
                       style: TextStyle(
-                          color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1),
+                          color: Ranglar.value
+                              ? Colors.white
+                              : Color.fromRGBO(107, 119, 154, 1),
                           fontSize: 12.sp),
                     ),
                   ),
@@ -322,20 +368,24 @@ class _LastPageState extends State<LastPage> {
                   width: 80.w,
                   height: 36.h,
                   decoration: BoxDecoration(
-                    color: Ranglar.value ? Colors.white : Color.fromRGBO(62, 100, 255, 1),
+                    color: Ranglar.value
+                        ? Colors.white
+                        : Color.fromRGBO(62, 100, 255, 1),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15.r),
                         topRight: Radius.circular(15.r),
                         bottomLeft: Radius.circular(15.r)),
                   ),
                   child: Padding(
-                    padding:
-                    EdgeInsets.only(left: 15.w, bottom: 9.h, right: 11.w, top: 9.h),
+                    padding: EdgeInsets.only(
+                        left: 15.w, bottom: 9.h, right: 11.w, top: 9.h),
                     child: Text(
                       "... . . . .",
                       style: TextStyle(
                           fontSize: 14.sp,
-                          color: Ranglar.value ? Colors.black : Color.fromRGBO(255, 255, 255, 1)),
+                          color: Ranglar.value
+                              ? Colors.black
+                              : Color.fromRGBO(255, 255, 255, 1)),
                     ),
                   ),
                 ),
@@ -357,7 +407,9 @@ class _LastPageState extends State<LastPage> {
                     child: Text(
                       "10:16",
                       style: TextStyle(
-                          color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1),
+                          color: Ranglar.value
+                              ? Colors.white
+                              : Color.fromRGBO(107, 119, 154, 1),
                           fontSize: 12.sp),
                     ),
                   ),
@@ -367,7 +419,9 @@ class _LastPageState extends State<LastPage> {
                     height: 8.h,
                     child: Image.asset(
                       "assets/Tick.png",
-                      color: Ranglar.value ? Colors.white : Color.fromRGBO(62, 100, 255, 1),
+                      color: Ranglar.value
+                          ? Colors.white
+                          : Color.fromRGBO(62, 100, 255, 1),
                     ),
                   ),
                 ],
@@ -384,7 +438,9 @@ class _LastPageState extends State<LastPage> {
                   width: 240.w,
                   height: 46.h,
                   decoration: BoxDecoration(
-                      color: Ranglar.value ? Color.fromRGBO(107,119,154,1) : Color.fromRGBO(241, 244, 247, 1),
+                      color: Ranglar.value
+                          ? Color.fromRGBO(107, 119, 154, 1)
+                          : Color.fromRGBO(241, 244, 247, 1),
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(15.r),
                           topLeft: Radius.circular(15.r),
@@ -395,18 +451,23 @@ class _LastPageState extends State<LastPage> {
                           margin: EdgeInsets.only(left: 16.w),
                           width: 22.w,
                           height: 22.h,
-                          child: Icon(Icons.pause_circle_filled_sharp,color: Ranglar.value ? Colors.white : Color.fromRGBO(34,31,32,1),)),
+                          child: Icon(
+                            Icons.pause_circle_filled_sharp,
+                            color: Ranglar.value
+                                ? Colors.white
+                                : Color.fromRGBO(34, 31, 32, 1),
+                          )),
                       Container(
                         width: 190.w,
                         height: 45.h,
                         child: Column(
                           children: [
                             Transform.scale(
-                              scale: 1.2.sp,
+                              scaleX: 1.1.sp,
                               child: Container(
                                 margin: EdgeInsets.only(top: 22.5.h),
                                 width: 190.w,
-                                height: 4.h,
+                                height: 1.h,
                                 child: Slider(
                                     max: 5.04,
                                     min: 0,
@@ -424,7 +485,7 @@ class _LastPageState extends State<LastPage> {
                               height: 15.h,
                               child: Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                       width: 20.w,
@@ -433,8 +494,10 @@ class _LastPageState extends State<LastPage> {
                                         "3:45",
                                         style: TextStyle(
                                             fontSize: 10.sp,
-                                            color: Ranglar.value ? Colors.white : Color.fromRGBO(
-                                                107, 119, 154, 1)),
+                                            color: Ranglar.value
+                                                ? Colors.white
+                                                : Color.fromRGBO(
+                                                    107, 119, 154, 1)),
                                       )),
                                   Container(
                                       margin: EdgeInsets.only(top: 3.5.h),
@@ -444,8 +507,10 @@ class _LastPageState extends State<LastPage> {
                                         "5:04",
                                         style: TextStyle(
                                             fontSize: 10.sp,
-                                            color: Ranglar.value ? Colors.white : Color.fromRGBO(
-                                                107, 119, 154, 1)),
+                                            color: Ranglar.value
+                                                ? Colors.white
+                                                : Color.fromRGBO(
+                                                    107, 119, 154, 1)),
                                       )),
                                 ],
                               ),
@@ -472,7 +537,9 @@ class _LastPageState extends State<LastPage> {
                     child: Text(
                       "10:18",
                       style: TextStyle(
-                          color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1),
+                          color: Ranglar.value
+                              ? Colors.white
+                              : Color.fromRGBO(107, 119, 154, 1),
                           fontSize: 12.sp),
                     ),
                   ),
@@ -481,7 +548,8 @@ class _LastPageState extends State<LastPage> {
             ),
             SizedBox(
               height: 20.h,
-            ),Container(
+            ),
+            Container(
               margin: EdgeInsets.only(left: 27.w),
               width: double.infinity.sw,
               height: 16.h,
@@ -491,25 +559,34 @@ class _LastPageState extends State<LastPage> {
                   Text(
                     "${Info.name[widget.index!]} пищет ...",
                     style: TextStyle(
-                        fontSize: 14.sp,
-                        color: Ranglar.value ? Colors.white : Color.fromRGBO(107, 119, 154, 1),
+                      fontSize: 14.sp,
+                      color: Ranglar.value
+                          ? Colors.white
+                          : Color.fromRGBO(107, 119, 154, 1),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 8.h,),
+            SizedBox(
+              height: 8.h,
+            ),
             Container(
               width: double.infinity.sw,
               height: 68.h,
               decoration: BoxDecoration(
-                  color: Ranglar.value ? Color.fromRGBO(107,119,154,1) : Color.fromRGBO(241, 244, 247, 1),
+                  color: Ranglar.value
+                      ? Color.fromRGBO(107, 119, 154, 1)
+                      : Color.fromRGBO(241, 244, 247, 1),
                   boxShadow: [
                     BoxShadow(
                         offset: Offset(
-                          0.w,-1.h,
+                          0.w,
+                          -1.h,
                         ),
-                        color: Ranglar.value ? Color.fromRGBO(107,119,154,1) : Color.fromRGBO(241, 244, 247, 1)),
+                        color: Ranglar.value
+                            ? Color.fromRGBO(107, 119, 154, 1)
+                            : Color.fromRGBO(241, 244, 247, 1)),
                   ]),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -521,21 +598,27 @@ class _LastPageState extends State<LastPage> {
                     child: Icon(
                       Icons.add,
                       size: 22.sp,
-                      color: Ranglar.value ? Colors.white : Color.fromRGBO(34, 43, 69, 1),
+                      color: Ranglar.value
+                          ? Colors.white
+                          : Color.fromRGBO(34, 43, 69, 1),
                     ),
                   ),
                   Container(
                     width: 290.w,
                     height: 54.h,
                     decoration: BoxDecoration(
-                        color: Ranglar.value ? Colors.white : Color.fromRGBO(255, 255, 255, 1),
+                        color: Ranglar.value
+                            ? Colors.white
+                            : Color.fromRGBO(255, 255, 255, 1),
                         borderRadius: BorderRadius.circular(10.r)),
                     child: TextFormField(
                       obscuringCharacter: "*",
                       decoration: InputDecoration(
                           hintText: "Напишите письмо ...",
                           hintStyle: TextStyle(
-                              color: Ranglar.value ? Colors.black : Color.fromRGBO(107, 119, 154, 1),
+                              color: Ranglar.value
+                                  ? Colors.black
+                                  : Color.fromRGBO(107, 119, 154, 1),
                               fontSize: 16.sp),
                           errorBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.r),
@@ -548,10 +631,10 @@ class _LastPageState extends State<LastPage> {
                               borderRadius: BorderRadius.circular(10.r),
                               borderSide: BorderSide(color: Colors.green))),
                       enabled: true,
-                      autofocus: false,
-                      maxLines: 15,
                       showCursor: true,
-                      cursorColor: Ranglar.value ? Color.fromRGBO(107,119,154,1) : Colors.black,
+                      cursorColor: Ranglar.value
+                          ? Color.fromRGBO(107, 119, 154, 1)
+                          : Colors.black,
                       cursorHeight: 20.h,
                       cursorWidth: 1.8.w,
                     ),
@@ -560,7 +643,10 @@ class _LastPageState extends State<LastPage> {
                     width: 15.4.w,
                     height: 22.h,
                     child: Icon(Icons.mic,
-                        size: 22.sp, color: Ranglar.value ? Colors.white : Color.fromRGBO(34, 43, 69, 1)),
+                        size: 22.sp,
+                        color: Ranglar.value
+                            ? Colors.white
+                            : Color.fromRGBO(34, 43, 69, 1)),
                   ),
                 ],
               ),
@@ -569,6 +655,5 @@ class _LastPageState extends State<LastPage> {
         ),
       ),
     );
-    });
   }
 }

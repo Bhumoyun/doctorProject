@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Colorrs.dart';
 import 'package:flutter/material.dart';
 
-class Time extends StatefulWidget {
+class Calendar extends StatefulWidget {
   @override
-  _TimeState createState() => _TimeState();
+  _CalendarState createState() => _CalendarState();
 }
 
-class _TimeState extends State<Time> {
+class _CalendarState extends State<Calendar> {
   DateTime _dateTime = DateTime.now();
   Timer? _time;
   @override

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Colorrs.dart';
-import 'InfoPage.dart';
-import 'Info1.dart';
-import 'InfoPage.dart';
+import 'Doctor_Info.dart';
+import 'Info.dart';
+import 'Doctor_Info.dart';
 
-class Sahifa1 extends StatefulWidget {
+class Search_doctor extends StatefulWidget {
   @override
-  _Sahifa1State createState() => _Sahifa1State();
+  _Search_doctorState createState() => _Search_doctorState();
 }
 
-class _Sahifa1State extends State<Sahifa1> {
+class _Search_doctorState extends State<Search_doctor> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -24,7 +24,7 @@ class _Sahifa1State extends State<Sahifa1> {
               List<String> path = settings1.name.toString().split("/");
               if (path[1] == "InfoPage") {
                 return MaterialPageRoute(
-                    builder: (context) => InfoPage(int.parse(path[2])));
+                    builder: (context) => Doctor_Info(int.parse(path[2])));
               }
             },
             home: Scaffold(
@@ -41,25 +41,15 @@ class _Sahifa1State extends State<Sahifa1> {
                         ? Ranglar3.Infopage22
                         : Ranglar3.Infopage2,
                   ),
-                  child: Container(
-                    width: 40.w,
-                    height: 40.h,
-                    decoration: BoxDecoration(
-                      border:
-                          Border.all(color: Color.fromRGBO(241, 244, 247, 1)),
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color.fromRGBO(241, 244, 247, 1),
-                    ),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(
-                        Icons.arrow_back,
-                        color: Ranglar.value
-                            ? Ranglar3.Infopage23
-                            : Ranglar3.Infopage3,
-                      ),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Ranglar.value
+                          ? Ranglar3.Infopage23
+                          : Ranglar3.Infopage3,
                     ),
                   ),
                 ),
@@ -149,20 +139,19 @@ class _Sahifa1State extends State<Sahifa1> {
                     SizedBox(
                       height: 20.h,
                     ),
-                    Container(
-                      width: double.infinity,
-                      height: 896.h,
-                      decoration: BoxDecoration(boxShadow: [
-                        BoxShadow(
-                            offset: Offset(0.w, 10.h),
-                            blurRadius: 60.r,
-                            color: Ranglar.value
-                                ? Ranglar3.Infopage215
-                                : Ranglar3.Infopage15),
-                      ]),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: Container(
-                        height: 896.h,
                         width: double.infinity,
+                        height: 896.h,
+                        decoration: BoxDecoration(boxShadow: [
+                          BoxShadow(
+                              offset: Offset(0.w, 5.h),
+                              blurRadius: 200.r,
+                              color: Ranglar.value
+                                  ? Ranglar3.Infopage215
+                                  : Ranglar3.Infopage15),
+                        ]),
                         child: GridView.builder(
                             itemCount: Info.name.length,
                             gridDelegate:
@@ -173,17 +162,64 @@ class _Sahifa1State extends State<Sahifa1> {
                             ),
                             itemBuilder: (context, index) {
                               return GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    Navigator.pushNamed(
-                                        context, "/InfoPage/$index");
-                                  });
-                                },
-                                child: Container(),
-                              );
+                                  onTap: () {
+                                    setState(() {
+                                      Navigator.pushNamed(
+                                          context, "/InfoPage/$index");
+                                    });
+                                  },
+                                  child: Container(
+                                      width: 40.w,
+                                      height: 80.h,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10.r),
+                                          color: Colors.white),
+                                      child: Column(children: [
+                                        SizedBox(
+                                          height: 10.h,
+                                        ),
+                                        CircleAvatar(
+                                          radius: 45.r,
+                                          backgroundColor: Colors.transparent,
+                                          backgroundImage:
+                                              AssetImage(Info.assets1[index]),
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        Container(
+                                          width: double.infinity,
+                                          height: 18.h,
+                                          child: Center(
+                                              child: Text(
+                                            Info.name[index],
+                                            style: TextStyle(fontSize: 16.sp),
+                                          )),
+                                        ),
+                                        Container(
+                                          width: double.infinity,
+                                          height: 14.h,
+                                          child: Center(
+                                              child: Text(
+                                            Info.name1[index],
+                                            style: TextStyle(fontSize: 12.sp),
+                                          )),
+                                        ),
+                                        Container(
+                                          width: double.infinity,
+                                          height: 20.h,
+                                          child: Center(
+                                              child: Text(
+                                            Info.name2[index],
+                                            style: TextStyle(fontSize: 14.sp),
+                                          )),
+                                        )
+                                      ])));
                             }),
                       ),
                     ),
+                    SizedBox(
+                      height: 20.h,
+                    )
                   ],
                 ),
               ),

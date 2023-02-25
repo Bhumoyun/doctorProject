@@ -1,8 +1,8 @@
-import 'Info (1).dart';
-import 'Sahifa2.dart';
+import 'Search doctor.dart';
+import 'Calendar.dart';
 import 'Colorrs.dart';
 import 'package:flutter/material.dart';
-import 'Info1.dart';
+import 'Info.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -20,18 +20,18 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context , child) {
-        return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-    }
-    );
-    }
-    }
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: HomePage(),
+          );
+        });
+  }
+}
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -43,52 +43,55 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Ranglar.value ?Colors.black : Colors.white,
+      backgroundColor: Ranglar.value ? Colors.black : Colors.white,
       appBar: AppBar(
-        backgroundColor:Ranglar.value ?Colors.black : Colors.white,
+        backgroundColor: Ranglar.value ? Colors.black : Colors.white,
         elevation: 0,
         title: SizedBox(
           width: 138.w,
           child: Text(
             "Привет, Абдукарим",
-            style:
-                TextStyle(fontSize: 15.sp, color: Ranglar.value ? Ranglar.main21 : Ranglar.main1),
+            style: TextStyle(
+                fontSize: 15.sp,
+                color: Ranglar.value ? Ranglar.main21 : Ranglar.main1),
           ),
         ),
         actions: [
           GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Time()));
+                  context, MaterialPageRoute(builder: (context) => Calendar()));
             },
             child: Container(
               width: 36.w,
               height: 36.h,
               margin: EdgeInsets.symmetric(vertical: 10.h),
               decoration: BoxDecoration(
-                  border: Border.all(color:  Ranglar.value ? Ranglar.main22 : Ranglar.main2),
+                  border: Border.all(
+                      color: Ranglar.value ? Ranglar.main22 : Ranglar.main2),
                   borderRadius: BorderRadius.circular(10.r)),
               child: Center(
                 child: Icon(
                   Icons.calendar_month,
-                  color:  Ranglar.value ? Ranglar.main23 : Ranglar.main3,
+                  color: Ranglar.value ? Ranglar.main23 : Ranglar.main3,
                 ),
               ),
             ),
           ),
           Padding(
-            padding:  EdgeInsets.only(right: 10.w, left: 7.w),
+            padding: EdgeInsets.only(right: 10.w, left: 7.w),
             child: Icon(
               Icons.more_vert,
               color: Ranglar.value ? Ranglar.main24 : Ranglar.main4,
             ),
           ),
           Switch(
-            value: Ranglar.value, onChanged: (e){
-            setState(() {
-              Ranglar.value = e;
-            });
-          }),
+              value: Ranglar.value,
+              onChanged: (e) {
+                setState(() {
+                  Ranglar.value = e;
+                });
+              }),
         ],
       ),
       body: SingleChildScrollView(
@@ -108,9 +111,11 @@ class _HomePageState extends State<HomePage> {
                               spreadRadius: 0.r,
                               offset: Offset(0, 25),
                               blurRadius: 58.r,
-                              color:  Ranglar.value ? Ranglar.main25 : Ranglar.main5),
+                              color: Ranglar.value
+                                  ? Ranglar.main25
+                                  : Ranglar.main5),
                         ],
-                        color:  Ranglar.value ? Ranglar.main26 : Ranglar.main6,
+                        color: Ranglar.value ? Ranglar.main26 : Ranglar.main6,
                         borderRadius: BorderRadius.circular(20.r)),
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.w, top: 20.h),
@@ -124,7 +129,9 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               "Защита от Covid-19",
                               style: TextStyle(
-                                  color:  Ranglar.value ? Ranglar.main27 : Ranglar.main7,
+                                  color: Ranglar.value
+                                      ? Ranglar.main27
+                                      : Ranglar.main7,
                                   fontSize: 36.sp,
                                   fontWeight: FontWeight.w700),
                             ),
@@ -133,12 +140,14 @@ class _HomePageState extends State<HomePage> {
                             width: 200.w,
                             height: 52.h,
                             child: Padding(
-                              padding:  EdgeInsets.only(top: 16.h),
+                              padding: EdgeInsets.only(top: 16.h),
                               child: Text(
                                 "Запищитесь онлайн на вакцинацию",
                                 style: TextStyle(
                                   fontSize: 16.sp,
-                                  color:  Ranglar.value ? Ranglar.main28 : Ranglar.main8,
+                                  color: Ranglar.value
+                                      ? Ranglar.main28
+                                      : Ranglar.main8,
                                 ),
                               ),
                             ),
@@ -149,7 +158,8 @@ class _HomePageState extends State<HomePage> {
                           Container(
                             width: 296.32.w,
                             height: 235.84.h,
-                            margin: EdgeInsets.only(right: 32.4.w, left: 31.27.w),
+                            margin:
+                                EdgeInsets.only(right: 32.4.w, left: 31.27.w),
                             child: Image.asset(
                               "assets/illustration.png",
                             ),
@@ -165,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                     width: double.infinity,
                     height: 80.h,
                     decoration: BoxDecoration(
-                      color:  Ranglar.value ? Ranglar.main29 : Ranglar.main9,
+                      color: Ranglar.value ? Ranglar.main29 : Ranglar.main9,
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Padding(
@@ -182,15 +192,19 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 16.sp,
-                                    color:  Ranglar.value ? Ranglar.main210 : Ranglar.main10),
+                                    color: Ranglar.value
+                                        ? Ranglar.main210
+                                        : Ranglar.main10),
                               ),
-                               SizedBox(
+                              SizedBox(
                                 height: 9.h,
                               ),
                               Text(
                                 "Найдите подходящих специалистов",
                                 style: TextStyle(
-                                    color:  Ranglar.value ? Ranglar.main211 : Ranglar.main11),
+                                    color: Ranglar.value
+                                        ? Ranglar.main211
+                                        : Ranglar.main11),
                               ),
                             ],
                           ),
@@ -200,16 +214,21 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Sahifa1()));
+                                        builder: (context) => Search_doctor()));
                               });
                             },
                             child: Container(
                               width: 40.w,
                               height: 40.h,
                               decoration: BoxDecoration(
-                                  color:  Ranglar.value ? Ranglar.main212 : Ranglar.main12,
+                                  color: Ranglar.value
+                                      ? Ranglar.main212
+                                      : Ranglar.main12,
                                   borderRadius: BorderRadius.circular(10.r)),
-                              child: Icon(Icons.arrow_forward,color: Ranglar.value ? Colors.white : Colors.black),
+                              child: Icon(Icons.arrow_forward,
+                                  color: Ranglar.value
+                                      ? Colors.white
+                                      : Colors.black),
                             ),
                           ),
                         ],
@@ -219,11 +238,11 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-             SizedBox(
+            SizedBox(
               height: 30.h,
             ),
             Padding(
-              padding:  EdgeInsets.only(left: 27.w),
+              padding: EdgeInsets.only(left: 27.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -232,7 +251,8 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 18.sp,
-                        color:  Ranglar.value ? Ranglar.main213 : Ranglar.main13),
+                        color:
+                            Ranglar.value ? Ranglar.main213 : Ranglar.main13),
                   ),
                 ],
               ),
@@ -246,25 +266,27 @@ class _HomePageState extends State<HomePage> {
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return Container(
-                    margin:  EdgeInsets.only(right: 10.w),
+                    margin: EdgeInsets.only(right: 10.w),
                     width: 114.w,
                     decoration: BoxDecoration(
-                        color:  Ranglar.value ? Ranglar.main214 : Ranglar.main14,
+                        color: Ranglar.value ? Ranglar.main214 : Ranglar.main14,
                         borderRadius: BorderRadius.circular(20.r)),
                     child: Center(
                       child: Column(
                         children: [
                           Padding(
-                            padding:  EdgeInsets.only(top: 21.h),
+                            padding: EdgeInsets.only(top: 21.h),
                             child: Image.asset(Info.assImag[index]),
                           ),
                           Padding(
-                            padding:  EdgeInsets.only(top: 22.07.h),
+                            padding: EdgeInsets.only(top: 22.07.h),
                             child: Text(
                               Info.prof[index],
                               style: TextStyle(
                                   fontSize: 15.sp,
-                                  color:  Ranglar.value ? Ranglar.main215 : Ranglar.main15),
+                                  color: Ranglar.value
+                                      ? Ranglar.main215
+                                      : Ranglar.main15),
                             ),
                           ),
                           Padding(
@@ -273,7 +295,9 @@ class _HomePageState extends State<HomePage> {
                               Info.doctors[index],
                               style: TextStyle(
                                   fontSize: 10.sp,
-                                  color:  Ranglar.value ? Ranglar.main216 : Ranglar.main16),
+                                  color: Ranglar.value
+                                      ? Ranglar.main216
+                                      : Ranglar.main16),
                             ),
                           ),
                         ],
